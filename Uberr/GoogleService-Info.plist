@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>281066643882-aahq81fu64u6e4ua8vpig28873loovho.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.281066643882-aahq81fu64u6e4ua8vpig28873loovho</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCjWM7sUkidb_NQ7btv3Zymw3duF0D47pg</string>
+	<key>GCM_SENDER_ID</key>
+	<string>281066643882</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.flycoDeveloper.Uberr</string>
+	<key>PROJECT_ID</key>
+	<string>uberr-f030e</string>
+	<key>STORAGE_BUCKET</key>
+	<string>uberr-f030e.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:281066643882:ios:bf8e5b3ae1fd96d7</string>
+	<key>DATABASE_URL</key>
+	<string>https://uberr-f030e.firebaseio.com</string>
+</dict>
+</plist>
