@@ -42,7 +42,7 @@
                                             <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Alm-nA-GXY"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Kolay" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-mh-yGd">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Şifre" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pjj-mh-yGd">
                                         <rect key="frame" x="20" y="132" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -254,6 +254,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="taxiButton" destination="BTE-Zq-tIh" id="tpI-TG-6G0"/>
                         <outlet property="uberMap" destination="dDR-dX-5ZW" id="62C-Mf-Od3"/>
                     </connections>
                 </viewController>

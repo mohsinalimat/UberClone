@@ -87,12 +87,12 @@
 				F26C49111F7CF6F50016FD6F /* AppDelegate.swift */,
 				F26C49131F7CF6F50016FD6F /* ViewController.swift */,
 				F2860DA81FCEE83200205DF0 /* SingUpViewController.swift */,
+				F2860DAA1FCEF39A00205DF0 /* CallUberViewController.swift */,
 				F26C49231F7CF7C30016FD6F /* GoogleService-Info.plist */,
 				F26C49151F7CF6F50016FD6F /* Main.storyboard */,
 				F26C49181F7CF6F50016FD6F /* Assets.xcassets */,
 				F26C491A1F7CF6F50016FD6F /* LaunchScreen.storyboard */,
 				F26C491D1F7CF6F50016FD6F /* Info.plist */,
-				F2860DAA1FCEF39A00205DF0 /* CallUberViewController.swift */,
 			);
 			path = Uberr;
 			sourceTree = "<group>";
@@ -178,12 +178,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Uberr/Pods-Uberr-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
