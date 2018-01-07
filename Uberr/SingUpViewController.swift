@@ -15,13 +15,30 @@ class SingUpViewController: UIViewController {
     @IBOutlet weak var pass1: UITextField!
     @IBOutlet weak var pass2: UITextField!
     
-
+    @IBOutlet weak var choiceSegment: UISegmentedControl!
+    var driver:Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
 
+    @IBAction func selectUserType(_ sender: Any) {
+        if choiceSegment.selectedSegmentIndex == 0 {
+            print("Yolcu Seçildi")
+            driver = false
+            if(!(email.text?.isEmpty)!){
+                self.save(sender)
+            } else {
+                print("Sofur Seçildi")
+                driver = true
+                if (!(email.text?.isEmpty)!) {
+                    self.save(sender)
+                }
+            }
+        }
+        
+    }
     @IBAction func save(_ sender: Any) {
         
         if (email.text?.isEmpty)! && (pass1.text?.isEmpty)! && (pass2.text?.isEmpty)! {
@@ -42,9 +59,18 @@ class SingUpViewController: UIViewController {
             }
         }
         
+        if driver {
+            let userInfos:[String:Any] = ["email":email.text!,"gorev":"sofor"]
+            Database.database().reference().child("kullanicilar").childByAutoId().setValue(userInfos)
+            self.email.text = ""
+        } else {
+            let userInfos:[String:Any] = ["email":email.text!,"gorev":"yolcu"]
+            Database.database().reference().child("kullanicilar").childByAutoId().setValue(userInfos)
+            self.email.text = ""
+        }
     }
 
-    
+
 }
 
 

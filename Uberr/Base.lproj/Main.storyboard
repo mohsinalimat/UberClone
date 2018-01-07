@@ -66,6 +66,9 @@
                                             <segment title="Yolcu"/>
                                             <segment title="Sürücü"/>
                                         </segments>
+                                        <connections>
+                                            <action selector="selectUserType:" destination="BYZ-38-t0r" eventType="valueChanged" id="802-Ob-x39"/>
+                                        </connections>
                                     </segmentedControl>
                                 </subviews>
                                 <constraints>
@@ -102,6 +105,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="choiceSegment" destination="PSy-ew-eWa" id="SAB-1c-EHX"/>
                         <outlet property="email" destination="XRr-si-WDD" id="bpm-MI-BPm"/>
                         <outlet property="password" destination="pjj-mh-yGd" id="foz-Y9-jJa"/>
                     </connections>
@@ -168,13 +172,22 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9LH-AK-QIw">
+                                        <rect key="frame" x="161" y="380" width="61" height="30"/>
+                                        <state key="normal" title="Giriş Yap"/>
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" id="QD2-Yq-l8S"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Oof-rm-098" firstAttribute="top" secondItem="oTL-fu-OgP" secondAttribute="bottom" constant="46" id="2Wl-CU-KXz"/>
                                     <constraint firstItem="Oof-rm-098" firstAttribute="leading" secondItem="QXB-fq-4eF" secondAttribute="leading" id="4ss-c2-B8S"/>
                                     <constraint firstItem="oTL-fu-OgP" firstAttribute="top" secondItem="65D-ka-S6f" secondAttribute="bottom" constant="8" symbolic="YES" id="6DS-UV-u3j"/>
                                     <constraint firstAttribute="trailing" secondItem="Csg-H4-a7G" secondAttribute="trailing" constant="20" id="A3B-IW-NcN"/>
+                                    <constraint firstItem="9LH-AK-QIw" firstAttribute="top" secondItem="QXB-fq-4eF" secondAttribute="bottom" constant="46" id="AsT-t4-T0x"/>
                                     <constraint firstItem="Fun-yy-hti" firstAttribute="leading" secondItem="65D-ka-S6f" secondAttribute="leading" id="Fg1-tD-NNe"/>
+                                    <constraint firstItem="9LH-AK-QIw" firstAttribute="centerX" secondItem="nPJ-Nv-AT0" secondAttribute="centerX" id="LNK-cC-D82"/>
                                     <constraint firstItem="Csg-H4-a7G" firstAttribute="centerX" secondItem="nPJ-Nv-AT0" secondAttribute="centerX" id="Ldt-PU-9Aw"/>
                                     <constraint firstItem="oTL-fu-OgP" firstAttribute="leading" secondItem="Oof-rm-098" secondAttribute="leading" id="RSf-2B-6Bz"/>
                                     <constraint firstItem="Csg-H4-a7G" firstAttribute="top" secondItem="nPJ-Nv-AT0" secondAttribute="top" constant="20" id="aJI-N7-dFo"/>
@@ -188,6 +201,7 @@
                                     <constraint firstAttribute="bottom" secondItem="QXB-fq-4eF" secondAttribute="bottom" constant="333" id="n3o-rk-IZh"/>
                                     <constraint firstItem="QXB-fq-4eF" firstAttribute="top" secondItem="Oof-rm-098" secondAttribute="bottom" constant="37" id="ozy-tq-dpr"/>
                                     <constraint firstItem="Oof-rm-098" firstAttribute="trailing" secondItem="QXB-fq-4eF" secondAttribute="trailing" id="sfl-yY-OWL"/>
+                                    <constraint firstItem="9LH-AK-QIw" firstAttribute="centerX" secondItem="nPJ-Nv-AT0" secondAttribute="centerX" id="uoq-kp-jTm"/>
                                     <constraint firstItem="oTL-fu-OgP" firstAttribute="trailing" secondItem="Oof-rm-098" secondAttribute="trailing" id="w0I-DP-SLG"/>
                                     <constraint firstItem="65D-ka-S6f" firstAttribute="top" secondItem="Fun-yy-hti" secondAttribute="bottom" constant="8" symbolic="YES" id="yxk-DI-5LI"/>
                                 </constraints>
@@ -262,6 +276,36 @@
             </objects>
             <point key="canvasLocation" x="2309.5999999999999" y="85.907046476761622"/>
         </scene>
+        <!--Driver View Controller-->
+        <scene sceneID="CcJ-o4-Zzp">
+            <objects>
+                <viewController id="oMM-Lz-X08" customClass="DriverViewController" customModule="Uberr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aya-sU-1Hs">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şofür Seçildi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdJ-jd-asT">
+                                <rect key="frame" x="139" y="323" width="96.5" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="BdJ-jd-asT" firstAttribute="centerX" secondItem="aya-sU-1Hs" secondAttribute="centerX" id="KG7-Dh-h4B"/>
+                            <constraint firstItem="BdJ-jd-asT" firstAttribute="centerY" secondItem="aya-sU-1Hs" secondAttribute="centerY" id="uDp-G1-9SH"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="IpW-D2-pbA"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="u4R-SR-0z7">
+                        <barButtonItem key="leftBarButtonItem" title="Çıkış" id="J93-ob-aqs"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3wl-uG-Cc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2310" y="775"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Voy-c1-RyQ">
             <objects>
@@ -279,6 +323,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sO0-hg-SE7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1632" y="86.35682158920541"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="SAd-WQ-XXL">
+            <objects>
+                <navigationController storyboardIdentifier="DriverVC" automaticallyAdjustsScrollViewInsets="NO" id="JAf-Yq-A3x" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="j6Z-Ql-0T7">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="oMM-Lz-X08" kind="relationship" relationship="rootViewController" id="Uyc-bd-8Qv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Yg9-VG-kYD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1631" y="775"/>
         </scene>
     </scenes>
 </document>
