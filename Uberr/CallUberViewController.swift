@@ -28,6 +28,13 @@ class CallUberViewController: UIViewController, CLLocationManagerDelegate {
         locationManager.requestWhenInUseAuthorization()
         locationManager.startUpdatingLocation()
         
+        if let email = Auth.auth().currentUser?.email {
+            Database.database().reference().child("TaksiCagiranlar").queryOrdered(byChild: "email").queryEqual(toValue: email).observe(.childAdded, with: { (snapshot) in
+                self.taciCalled = true //Taksi zaten çağırmış
+                self.taxiButton.setTitle("İptal Et", for: UIControlState.normal)
+            })
+        }
+        
     }
 
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
