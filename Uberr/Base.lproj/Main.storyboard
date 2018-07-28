@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -284,27 +284,89 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Şofür Seçildi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdJ-jd-asT">
-                                <rect key="frame" x="139" y="323" width="96.5" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eHD-MK-Uht">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="taksiCaigranlarCell" id="kUf-cl-5mx">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="kUf-cl-5mx" id="Oew-9h-Cep">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="oMM-Lz-X08" id="3T0-E7-E6B"/>
+                                    <outlet property="delegate" destination="oMM-Lz-X08" id="xC7-12-zNJ"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="BdJ-jd-asT" firstAttribute="centerX" secondItem="aya-sU-1Hs" secondAttribute="centerX" id="KG7-Dh-h4B"/>
-                            <constraint firstItem="BdJ-jd-asT" firstAttribute="centerY" secondItem="aya-sU-1Hs" secondAttribute="centerY" id="uDp-G1-9SH"/>
+                            <constraint firstItem="IpW-D2-pbA" firstAttribute="bottom" secondItem="eHD-MK-Uht" secondAttribute="bottom" id="FOy-aZ-18C"/>
+                            <constraint firstItem="eHD-MK-Uht" firstAttribute="leading" secondItem="IpW-D2-pbA" secondAttribute="leading" id="ZvW-Cj-Maw"/>
+                            <constraint firstItem="IpW-D2-pbA" firstAttribute="trailing" secondItem="eHD-MK-Uht" secondAttribute="trailing" id="fvP-Ol-VsY"/>
+                            <constraint firstItem="eHD-MK-Uht" firstAttribute="top" secondItem="IpW-D2-pbA" secondAttribute="top" id="gtC-XV-rxi"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="IpW-D2-pbA"/>
                     </view>
                     <navigationItem key="navigationItem" id="u4R-SR-0z7">
-                        <barButtonItem key="leftBarButtonItem" title="Çıkış" id="J93-ob-aqs"/>
+                        <barButtonItem key="leftBarButtonItem" title="Çıkış" id="J93-ob-aqs">
+                            <connections>
+                                <action selector="logout:" destination="oMM-Lz-X08" id="tS9-bE-BLa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="eHD-MK-Uht" id="3fb-A4-eEP"/>
+                        <segue destination="xan-Cy-VcX" kind="show" id="lw3-lT-0jd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3wl-uG-Cc1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2310" y="775"/>
+        </scene>
+        <!--Taxi Request Accept View Controller-->
+        <scene sceneID="apC-L5-Awy">
+            <objects>
+                <viewController storyboardIdentifier="TaxiRequestVC" id="xan-Cy-VcX" customClass="TaxiRequestAcceptViewController" customModule="Uberr" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oFF-r2-lX3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="e0F-lW-gol">
+                                <rect key="frame" x="16" y="80" width="343" height="350"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="g8p-hW-D4q"/>
+                                </constraints>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aby-ta-VTw">
+                                <rect key="frame" x="138" y="494" width="98" height="30"/>
+                                <state key="normal" title="İsteği Kabul Et"/>
+                                <connections>
+                                    <action selector="acceptRequest:" destination="xan-Cy-VcX" eventType="touchUpInside" id="Jj5-mE-HJK"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="e0F-lW-gol" firstAttribute="leading" secondItem="oFF-r2-lX3" secondAttribute="leadingMargin" id="7eU-Lt-e4J"/>
+                            <constraint firstItem="Aby-ta-VTw" firstAttribute="top" secondItem="e0F-lW-gol" secondAttribute="bottom" constant="64" id="NJP-FY-hlI"/>
+                            <constraint firstItem="e0F-lW-gol" firstAttribute="trailing" secondItem="oFF-r2-lX3" secondAttribute="trailingMargin" id="PyG-oV-4eN"/>
+                            <constraint firstItem="Aby-ta-VTw" firstAttribute="centerX" secondItem="oFF-r2-lX3" secondAttribute="centerX" id="QpG-Rl-Yqf"/>
+                            <constraint firstItem="e0F-lW-gol" firstAttribute="top" secondItem="OA2-fS-iAM" secondAttribute="top" constant="16" id="u54-kh-yTq"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="OA2-fS-iAM"/>
+                    </view>
+                    <connections>
+                        <outlet property="requestMap" destination="e0F-lW-gol" id="9Y3-5y-A3k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OkS-P8-18I" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3042" y="774"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Voy-c1-RyQ">
