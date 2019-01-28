@@ -3,3 +3,13 @@ Live Uber example was made.
 
 <h2> Externally used library </h2>
 <a href = "https://firebase.google.com/">Firebase</a> provides server and dashboard to manage one's own data.</br>
+
+<h2>Screen Shots</h2>
+
+Login Page
+
+![alt text](ss2.png)
+
+Taxi Call Page
+
+![alt text](ss1.png)
